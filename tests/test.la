@@ -1,0 +1,2 @@
+fib :: Int -> Int
+fib x = return if x == 42 then x+42 else x + 1
