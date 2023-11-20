@@ -1,4 +1,5 @@
 #include "state_machine.h"
+#include <stdio.h>
 
 /*
 Non-deterministic state machine
@@ -17,7 +18,7 @@ void NewStateMachine(StateMachine *stateMachine)
 	}
 }
 
-void AddState(StateMachine *stateMachine, int state, bool accept)
+void AddState(StateMachine *stateMachine, int state, int accept)
 {
 	stateMachine->states[state] = accept;
 }
@@ -29,6 +30,7 @@ void AddTransition(StateMachine *stateMachine, int start, int input, int end)
 
 bool MatchTransition(StateMachine *stateMachine, int input[])
 {
+	printf("debug");
 	int currentStates[MAX_STATES] = { 0 };
 	currentStates[0] = 1;
 
@@ -54,6 +56,7 @@ bool MatchTransition(StateMachine *stateMachine, int input[])
 			currentStates[j] = nextStates[j];
 		}
 	}
+	
 
 	for (int i = 0; i < MAX_STATES; i++)
 	{

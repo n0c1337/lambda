@@ -18,6 +18,7 @@ int main()
     AddState(&stateMachine, 0, 0);
     AddState(&stateMachine, 1, 0);
     AddState(&stateMachine, 2, 0);
+    AddState(&stateMachine, 3, 0);
     AddState(&stateMachine, 4, 1); // End state
 
     AddTransition(&stateMachine, 0, GO_TO_STATE_1, 1);

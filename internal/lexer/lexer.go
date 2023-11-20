@@ -1,8 +1,5 @@
 package lexer
 
-// #cgo CFLAGS: -g -Wall
-// #include "state_machine.h"
-import "C"
 import (
 	"errors"
 	"fmt"
@@ -16,6 +13,7 @@ func NewLexer() Lexer {
 
 // 🧐
 func (Lexer) PerformLexicalAnalysis(content string) (string, error) {
+	StateMachineExpression()
 	fmt.Println(content)
 	switch content {
 	default:
